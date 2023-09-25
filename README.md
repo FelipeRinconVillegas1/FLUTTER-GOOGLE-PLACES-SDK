@@ -12,10 +12,10 @@ Check out [Rational](##RATIONAL) below to understand why you should use this plu
 
 To use this plugin, add to yaml: 
 
-**  flutter_google_places_sdk:
+flutter_google_places_sdk:
     git:
       url: https://github.com/FelipeRinconVillegas1/FLUTTER-GOOGLE-PLACES-SDK.git
-      ref: main**
+      ref: main
 
 ## Rational
 
