@@ -1,5 +1,6 @@
 # flutter_google_places_sdk
 
+Original package: 
 [![pub package](https://img.shields.io/pub/v/flutter_google_places_sdk.svg)](https://pub.dartlang.org/packages/flutter_google_places_sdk)
 
 ![Tests](https://github.com/matanshukry/flutter_google_places_sdk/actions/workflows/tests.yml/badge.svg)
@@ -9,16 +10,12 @@ Check out [Rational](##RATIONAL) below to understand why you should use this plu
 
 ## Usage
 
-To use this plugin, add `flutter_google_places_sdk` as a [dependency in your pubspec.yaml file](https://flutter.dev/platform-plugins/).
+To use this plugin, add to yaml: 
 
-## Web Usage
-
-When using the web support you also need to enable the Maps JavaScript API in google cloud:
-
-https://developers.google.com/maps/documentation/javascript/get-api-key
-
-Limits:
-* Location restriction is not supported. See google issue tracker for more info: https://issuetracker.google.com/issues/36219203
+**  flutter_google_places_sdk:
+    git:
+      url: https://github.com/FelipeRinconVillegas1/FLUTTER-GOOGLE-PLACES-SDK.git
+      ref: main**
 
 ## Rational
 
@@ -58,16 +55,4 @@ void main() {
   ));
 }
 
-```
 
-## Development & Contributing
-
-This is a side project of mine, hence issues are usually dealt with on weekends.
-
-PRs are more than welcome if anyone want to contribute. There are 
-
-### Contribution Guidelines
-
-1. General code quality will adhere to new PRs, although nothing too strict. Specifics will discussed in each PRs.
-2. This is a multi-platform plugin, and each package is maintained independently. As part of it, each commit that changes the version is also tagged per platform. 
-   The result is that changes that require multiple packages will require multiple commits - and hence multiple PRs.
