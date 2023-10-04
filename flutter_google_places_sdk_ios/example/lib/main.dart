@@ -196,43 +196,6 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  void _predict() async {
-    if (_predicting) {
-      return;
-    }
-
-    final hasContent = _predictLastText?.isNotEmpty ?? false;
-
-    setState(() {
-      _predicting = hasContent;
-      _predictErr = null;
-    });
-
-    if (!hasContent) {
-      return;
-    }
-
-    try {
-      final result = await _places.findAutocompletePredictions(
-        _predictLastText!,
-        countries: _countries,
-        placeTypeFilter: _placeTypeFilter,
-        newSessionToken: false,
-        origin: LatLng(lat: 43.12, lng: 95.20),
-        locationBias: _locationBias,
-      );
-
-      setState(() {
-        _predictions = result.predictions;
-        _predicting = false;
-      });
-    } catch (err) {
-      setState(() {
-        _predictErr = err;
-        _predicting = false;
-      });
-    }
-  }
 
   void _onItemClicked(AutocompletePrediction item) {
     _fetchPlaceIdController.text = item.placeId;
@@ -293,10 +256,6 @@ class _MyHomePageState extends State<MyHomePage> {
             .toList(growable: false),
         value: _placeTypeFilter,
         onChanged: _onPlaceTypeFilterChanged,
-      ),
-      ElevatedButton(
-        onPressed: _predicting == true ? null : _predict,
-        child: const Text('Predict'),
       ),
 
       // -- Error widget + Result
